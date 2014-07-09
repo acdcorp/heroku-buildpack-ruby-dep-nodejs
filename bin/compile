@@ -73,8 +73,7 @@ function install_gems {
     export GEM_HOME=\$HOME/.gs
     export GEM_PATH=\$HOME/.gs:$(gem env path | sed "s|$CACHE_DIR|\$HOME|")
     export PATH=\$HOME/.gs/bin:\$HOME/ruby/bin:bin:/usr/bin:/bin
-    export RACK_ENV=production
-EOF
+  EOF
 
   HOME=$CACHE_DIR source $BUILD_DIR/.profile.d/gs.sh
 
