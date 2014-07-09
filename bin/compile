@@ -61,7 +61,7 @@ function install_gems {
   cp .gemrc $HOME
 
   echo "-----> Install dep"
-  gem install dep | indent
+  gem install dep-cj | indent
 
   echo "-----> Creating gemset"
   if [ ! -d "$CACHE_DIR/.gs" ]; then
