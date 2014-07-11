@@ -235,7 +235,7 @@ function make_compile {
   cd $BUILD_DIR
   export_env_dir $env_dir
   export GEM_HOME=$HOME/.gs
-  export GEM_PATH=$HOME/.gs:$(gem env path | sed "s|$CACHE_DIR|\$HOME|")
+  export GEM_PATH=$HOME/.gs:$(gem env path | sed "s|$CACHE_DIR|$HOME|")
   export PATH=$HOME/.gs/bin:$HOME/ruby/bin:bin:/usr/bin:/bin:$HOME/vendor/node/bin:$HOME/bin:$HOME/node_modules/.bin:$CACHE_DIR/ruby/bin:$PATH
   touch .env
   echo "-----> Running make compile"
