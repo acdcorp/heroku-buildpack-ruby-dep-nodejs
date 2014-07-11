@@ -234,8 +234,7 @@ function make_compile {
   PATH=$CACHE_DIR/ruby/bin:$PATH
   cd $BUILD_DIR
   echo "-----> Running make compile"
-  cat <<-EOF > which bs || (wget https://raw.githubusercontent.com/educabilia/bs/master/bin/bs && chmod +x bs && mv bs $$(dirname "$$(which ruby)")/../bin/bs)
-EOF
+	which bs || wget https://raw.githubusercontent.com/educabilia/bs/master/bin/bs && chmod +x bs && mv bs $CACHE_DIR/ruby/bin
   make compile
 }
 
