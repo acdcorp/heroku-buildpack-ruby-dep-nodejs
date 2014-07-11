@@ -258,7 +258,7 @@ function install_wget {
   curl -O http://ftp.gnu.org/gnu/wget/wget-1.13.4.tar.bz2
   tar jxvf wget-1.13.4.tar.bz2
   cd wget-1.13.4
-  ./configure --prefix=$CACHE_DIR/.tools/wget --with-ssl
+  ./configure --prefix=$CACHE_DIR/.tools/wget --without-ssl
   make
   make install
   echo "wget installed" | indent
@@ -272,9 +272,9 @@ function make_compile {
   PATH=$CACHE_DIR/ruby/bin:$PATH
   cd $BUILD_DIR
   echo "-----> Running make compile"
-	wget https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
+	wget http://raw.githubusercontent.com/educabilia/bs/master/bin/bs
   chmod +x bs
-  mv bs bin
+  mv bs $BUILD_DIR/bin/bs
   make compile
 }
 
