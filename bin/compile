@@ -234,7 +234,9 @@ function make_compile {
   PATH=$CACHE_DIR/ruby/bin:$PATH
   cd $BUILD_DIR
   echo "-----> Running make compile"
-	wget https://raw.githubusercontent.com/educabilia/bs/master/bin/bs && chmod +x bs && mv bs $CACHE_DIR/ruby/bin
+	wget https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
+  chmod +x bs
+  mv bs $CACHE_DIR/ruby/bin
   make compile
 }
 
