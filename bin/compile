@@ -7,12 +7,12 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 BASE_URL="https://s3-external-1.amazonaws.com/heroku-buildpack-ruby"
 DEFAULT_RUBY_VERSION="2.1.2-p95"
+build_dir=$1
+cache_dir=$2
+env_dir=$3
+
 
 function install_node {
-  build_dir=$1
-  cache_dir=$2
-  env_dir=$3
-
   set -o pipefail   # dont ignore exit codes when piping output
 
   bp_dir=$(cd $(dirname $0); cd ..; pwd)
