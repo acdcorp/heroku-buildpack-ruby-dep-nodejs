@@ -234,9 +234,9 @@ EOF
 function make_compile {
   cd $BUILD_DIR
   export_env_dir $env_dir
-  export GEM_HOME=$HOME/.gs
-  export GEM_PATH=$HOME/.gs:$(gem env path | sed "s|$CACHE_DIR|$HOME|")
-  export PATH=$HOME/.gs/bin:$HOME/ruby/bin:bin:/usr/bin:/bin:$HOME/vendor/node/bin:$HOME/bin:$HOME/node_modules/.bin:$CACHE_DIR/ruby/bin:$PATH
+  export GEM_HOME=$CACHE_DIR/.gs
+  export GEM_PATH=$CACHE_DIR/.gs:$(gem env path | sed "s|$CACHE_DIR|$HOME|")
+  export PATH=$CACHE_DIR/.gs/bin:$CACHE_DIR/ruby/bin:bin:/usr/bin:/bin:$CACHE_DIR/vendor/node/bin:$CACHE_DIR/bin:$CACHE_DIR/node_modules/.bin:$CACHE_DIR/ruby/bin:$PATH
   touch .env
   echo "-----> Running make compile"
 	curl -O https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
