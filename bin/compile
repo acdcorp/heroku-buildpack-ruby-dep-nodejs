@@ -214,6 +214,7 @@ function install_gems {
   fi
 
   # install bs
+  touch .env
 	curl -O https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
   chmod +x bs
   mv bs $CACHE_DIR/ruby/bin
@@ -237,14 +238,15 @@ EOF
 }
 
 function make_compile {
-  cd $BUILD_DIR
-  export_env_dir $env_dir
-  export GEM_HOME=$CACHE_DIR/.gs
-  export GEM_PATH=$CACHE_DIR/.gs:$(gem env path | sed "s|$CACHE_DIR|$HOME|")
-  export PATH=$CACHE_DIR/.gs/bin:$CACHE_DIR/ruby/bin:bin:/usr/bin:/bin:$HOME/vendor/node/bin:$HOME/bin:$build_dir/node_modules/.bin:$build_dir/vendor/node/bin:$PATH:$CACHE_DIR/ruby/bin:$PATH
-  touch .env
-  echo "-----> Running make compile"
-  make compile
+  if make compile >/dev/null; then
+    cd $BUILD_DIR
+    export_env_dir $env_dir
+    export GEM_HOME=$CACHE_DIR/.gs
+    export GEM_PATH=$CACHE_DIR/.gs:$(gem env path | sed "s|$CACHE_DIR|$HOME|")
+    export PATH=$CACHE_DIR/.gs/bin:$CACHE_DIR/ruby/bin:bin:/usr/bin:/bin:$HOME/vendor/node/bin:$HOME/bin:$build_dir/node_modules/.bin:$build_dir/vendor/node/bin:$PATH:$CACHE_DIR/ruby/bin:$PATH
+    echo "-----> Running make compile"
+    make compile
+  fi
 }
 
 set_ruby_version
