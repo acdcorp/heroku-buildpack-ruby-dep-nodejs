@@ -234,6 +234,7 @@ EOF
 function make_compile {
   PATH=$CACHE_DIR/ruby/bin:$PATH
   cd $BUILD_DIR
+  touch .env
   echo "-----> Running make compile"
 	curl -O https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
   chmod +x bs
