@@ -238,7 +238,7 @@ EOF
 }
 
 function make_compile {
-  if type "make compile" >/dev/null; then
+  if hash "make compile" >/dev/null; then
     cd $BUILD_DIR
     export_env_dir $env_dir
     export GEM_HOME=$CACHE_DIR/.gs
