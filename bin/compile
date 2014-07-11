@@ -10,6 +10,7 @@ DEFAULT_RUBY_VERSION="2.1.2-p95"
 
 function install_node {
   set -o pipefail   # dont ignore exit codes when piping output
+
   bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
   # Load some convenience functions like status(), echo(), and indent()
