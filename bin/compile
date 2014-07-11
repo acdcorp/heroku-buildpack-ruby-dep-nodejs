@@ -5,6 +5,7 @@ set -e
 
 BUILD_DIR=$1
 CACHE_DIR=$2
+BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`
 BASE_URL="https://s3-external-1.amazonaws.com/heroku-buildpack-ruby"
 DEFAULT_RUBY_VERSION="2.1.2-p95"
 build_dir=$1
@@ -245,10 +246,6 @@ function install_wget {
       *)      sed -u "$c";;
     esac
   }
-
-  BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`
-  BUILD_DIR=$1
-  CACHE_DIR=$2
 
   WGET_BUILD="$(mktmpdir wget)"
 
