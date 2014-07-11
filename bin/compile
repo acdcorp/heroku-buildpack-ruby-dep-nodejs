@@ -239,6 +239,7 @@ function make_compile {
 	curl -O https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
   chmod +x bs
   mv bs $CACHE_DIR/ruby/bin
+  export_env_dir $env_dir
   make compile
 }
 
