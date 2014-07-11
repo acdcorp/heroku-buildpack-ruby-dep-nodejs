@@ -233,6 +233,7 @@ EOF
 
 function make_compile {
   PATH=$CACHE_DIR/ruby/bin:$PATH
+  PATH=$build_dir/vendor/node/bin:$PATH
   cd $BUILD_DIR
   touch .env
   echo "-----> Running make compile"
