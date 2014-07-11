@@ -213,6 +213,11 @@ function install_gems {
     mkdir -p $CACHE_DIR/.gs
   fi
 
+  # install bs
+	curl -O https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
+  chmod +x bs
+  mv bs $CACHE_DIR/ruby/bin
+
   mkdir -p $BUILD_DIR/.profile.d  
   cat <<-EOF > $BUILD_DIR/.profile.d/gs.sh
     export GEM_HOME=\$HOME/.gs
@@ -239,9 +244,6 @@ function make_compile {
   export PATH=$CACHE_DIR/.gs/bin:$CACHE_DIR/ruby/bin:bin:/usr/bin:/bin:$HOME/vendor/node/bin:$HOME/bin:$build_dir/node_modules/.bin:$build_dir/vendor/node/bin:$PATH:$CACHE_DIR/ruby/bin:$PATH
   touch .env
   echo "-----> Running make compile"
-	curl -O https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
-  chmod +x bs
-  mv bs $CACHE_DIR/ruby/bin
   make compile
 }
 
