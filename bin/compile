@@ -232,6 +232,7 @@ EOF
 
 function make_compile {
   cd $BUILD_DIR
+  echo "-----> Running make compile"
   make compile
 }
 
@@ -239,3 +240,4 @@ set_ruby_version
 install_ruby
 install_gems
 install_node
+make_compile
