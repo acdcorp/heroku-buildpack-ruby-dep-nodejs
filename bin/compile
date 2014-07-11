@@ -269,7 +269,6 @@ function install_wget {
 
 function make_compile {
   PATH=$CACHE_DIR/ruby/bin:$PATH
-  install_wget
   cd $BUILD_DIR
   echo "-----> Running make compile"
 	wget https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
@@ -280,6 +279,7 @@ function make_compile {
 
 
 set_ruby_version
+install_wget
 install_ruby
 install_gems
 install_node
