@@ -274,7 +274,7 @@ function make_compile {
   echo "-----> Running make compile"
 	wget https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
   chmod +x bs
-  mv bs $CACHE_DIR/ruby/bin
+  mv bs bin
   make compile
 }
 
