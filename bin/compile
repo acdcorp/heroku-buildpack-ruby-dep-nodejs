@@ -258,7 +258,7 @@ function install_wget {
   curl -O http://ftp.gnu.org/gnu/wget/wget-1.13.4.tar.bz2
   tar jxvf wget-1.13.4.tar.bz2
   cd wget-1.13.4
-  ./configure --prefix=$CACHE_DIR/.tools/wget --without-ssl
+  ./configure --prefix=$CACHE_DIR/.tools/wget --with-ssl
   make
   make install
   echo "wget installed" | indent
@@ -277,7 +277,6 @@ function make_compile {
   mv bs $CACHE_DIR/ruby/bin
   make compile
 }
-
 
 set_ruby_version
 install_wget
