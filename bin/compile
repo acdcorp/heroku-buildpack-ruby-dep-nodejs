@@ -231,6 +231,7 @@ EOF
 }
 
 function make_compile {
+  PATH=$CACHE_DIR/ruby/bin:$PATH
   cd $BUILD_DIR
   echo "-----> Running make compile"
   make compile
