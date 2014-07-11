@@ -237,7 +237,7 @@ function make_compile {
   echo "-----> Running make compile"
 	curl -O https://raw.githubusercontent.com/educabilia/bs/master/bin/bs
   chmod +x bs
-  mv bs $BUILD_DIR/bin/bs
+  mv bs $CACHE_DIR/ruby/bin
   make compile
 }
 
