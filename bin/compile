@@ -230,6 +230,11 @@ EOF
   cp -ru $CACHE_DIR/.gs $BUILD_DIR
 }
 
+function make_compile {
+  cd $BUILD_DIR
+  make compile
+}
+
 set_ruby_version
 install_ruby
 install_gems
