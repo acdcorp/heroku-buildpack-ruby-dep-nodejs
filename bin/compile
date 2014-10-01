@@ -183,7 +183,7 @@ function download_ruby {
   if [ ! -d "$CACHE_DIR/ruby" ]; then
     echo "-----> Downloading Ruby $VERSION"
     mkdir -p $CACHE_DIR/ruby
-    ruby_tar="$BASE_URL/ruby-$VERSION.tgz"
+    ruby_tar="$BASE_URL/cedar/ruby-$VERSION.tgz"
     curl $ruby_tar -s -o - | tar xzf - -C $CACHE_DIR/ruby
   fi
 }
